@@ -23,10 +23,9 @@ pipeline {
       steps {
          sh 'rm owasp* || true'
          sh 'wget "https://github.com/dsodeepak/devsecops/blob/master/owasp-dependency-check1.sh" '
-         sh 'chmod +x owasp-dependency-check.sh'
-         sh 'bash owasp-dependency-check.sh'
+         sh 'chmod +x owasp-dependency-check1.sh'
+         sh 'bash owasp-dependency-check1.sh'
          sh 'cat /var/lib/jenkins/OWASP-Dependency-Check/reports/dependency-check-report.xml'
-        
       }
     }
     stage ('Build') {
