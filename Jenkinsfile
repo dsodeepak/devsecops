@@ -19,7 +19,7 @@ pipeline {
        sh 'cat trufflehog'
      }
    }
-  stage ('Source Composition Analysis') {
+  stage ('Source-Composition-Analysis') {
       steps {
          sh 'rm owasp* || true'
          sh 'wget "https://github.com/dsodeepak/devsecops/blob/master/owasp-dependency-check1.sh" '
@@ -34,7 +34,6 @@ pipeline {
       sh 'mvn clean package'
        }
     }
-
    stage ('Deploy-To-Tomcat') {
             steps {
            sshagent(['tomcat']) {
